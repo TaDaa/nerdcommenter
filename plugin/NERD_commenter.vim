@@ -1201,6 +1201,7 @@ endfunction
 "    'Minimal', 'Toggle', 'AlignLeft', 'AlignBoth', 'Comment',
 "    'Nested', 'ToEOL', 'Append', 'Insert', 'Uncomment', 'Yank'
 function! NERDComment(mode, type) range
+    call s:SetUpForNewFiletype(&filetype, 1)
     if exists('*NERDCommenter_before')
         exe "call NERDCommenter_before()"
     endif
